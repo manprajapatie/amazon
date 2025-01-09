@@ -4,7 +4,7 @@ import './NavbarBanner.css'
 function NavbarBanner() {
   return (
     <div>
-      
+        NavbarBanner
     </div>
   )
 }
