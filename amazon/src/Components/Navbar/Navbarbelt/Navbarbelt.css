@@ -200,9 +200,9 @@
     display: flex;
     position: relative;
     color: white;
+    justify-content: center;
     text-decoration: none;
     flex-direction: column;
-    height: 30px;
     padding: 8px;
     cursor: pointer;
     &:hover{
@@ -222,4 +222,20 @@
     line-height: 10px;
     align-items: center;
     font-weight: 700;
+}
+
+/*---------- Right side Cart ----------*/
+
+.cartTitle{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.cartItemNumberNavbarBelt{
+    position: absolute;
+    bottom: 70%;
+    left: 22%;
+    color: #febd69;
+    font-weight: 600;
+    font-size: 16px;
 }

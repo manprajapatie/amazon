@@ -5,6 +5,7 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import india from "../../../assets/indiaflag.jpg"
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 function Navbarbelt() {
   return (
@@ -94,6 +95,24 @@ function Navbarbelt() {
         <div className="helloSignInNavbarBelt">
               <div className="helloTopNavbarBelt">Hello, User</div>
               <div className="indiaCodeNavbarBelt">Accounts & Lists</div>
+        </div>
+
+
+        <div className="helloSignInNavbarBelt">
+              <div className="helloTopNavbarBelt">Returns</div>
+              <div className="indiaCodeNavbarBelt">& Order</div>
+        </div>
+
+         {/*------------ Right side Cart ------------*/}
+
+        <div className="helloSignInNavbarBelt">
+              <div className="cartItemNumberNavbarBelt">2</div>
+              <div className="helloCodeNavbarBelt">
+                <ShoppingCartOutlinedIcon/>
+                <span className="cartTitle">
+                Cart
+                </span>
+                </div>
         </div>
 
       </div>
