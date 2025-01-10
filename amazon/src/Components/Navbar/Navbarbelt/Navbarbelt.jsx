@@ -4,6 +4,7 @@ import amazonLogo from '../../../assets/amazon.png'
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import india from "../../../assets/indiaflag.jpg"
 
 function Navbarbelt() {
   return (
@@ -44,7 +45,7 @@ function Navbarbelt() {
 
       </div>
         {/*------------ Search Box ------------*/}
-        
+
       <div className="navbarBeltSearchBox">
 
           <div className="navbarBeltSearchDiv">
@@ -74,9 +75,30 @@ function Navbarbelt() {
 
       </div>
 
+        {/*------------ Right side of Navbar ------------*/}
+      
+      <div className="rightSideNavbarBelt">
+          <div className="indianFlagCode">
+            <img src={india} className="indianFlag" />
+            <div className="indiaCodeNavbarBelt">
+              EN
+              <ArrowDropDownOutlinedIcon
+              sx={{fontSize : 16,marginTop:1, marginLeft:-0.4 }}
+              className="indiaCodeNavbarBeltDrop"/>
+            </div>
+          </div>
 
-      <div className="rightSideNavbarBelt"></div>
-    </div>
+        {/*------------ Right side of Navbar User ------------*/}
+
+
+        <div className="helloSignInNavbarBelt">
+              <div className="helloTopNavbarBelt">Hello, User</div>
+              <div className="indiaCodeNavbarBelt">Accounts & Lists</div>
+        </div>
+
+      </div>
+
+      </div>
   );
 }
 
