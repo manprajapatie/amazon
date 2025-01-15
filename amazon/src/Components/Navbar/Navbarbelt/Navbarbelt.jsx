@@ -8,7 +8,14 @@ import india from "../../../assets/indiaflag.jpg"
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Link } from "react-router-dom";
 
+// react redux Methods;
+import { useSelector, useDispatch } from "react-redux";
+
 function Navbarbelt() {
+
+  {/*------------ Use state using redux ------------*/}
+  const cartItems = useSelector((state) => state.cart.items);
+
   return (
     <div className="navbarBelt">
 
@@ -107,7 +114,7 @@ function Navbarbelt() {
          {/*------------ Right side Cart ------------*/}
 
         <Link to={'/Cart'} className="helloSignInNavbarBelt">
-              <div className="cartItemNumberNavbarBelt">2</div>
+              <div className="cartItemNumberNavbarBelt">{cartItems.length}</div>
               <div className="helloCodeNavbarBelt">
                 <ShoppingCartOutlinedIcon/>
                 <span className="cartTitle">

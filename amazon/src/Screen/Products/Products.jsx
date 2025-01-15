@@ -4,7 +4,27 @@ import StarRateIcon from '@mui/icons-material/StarRate';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import productDetails from './Products.json'
 
+//This is like loader for cart
+import {toast, ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/action/action';
+
+
 const Products = () => {
+
+    const dispatch = useDispatch();
+    const cartItems = useSelector((state) => state.cart.items);
+
+    const handleAddToCart = (item) => {
+        dispatch(addToCart(item));
+        toast.success("Added to Cart",
+            {
+                position: "bottom-right"
+            }
+        )
+    }
     return (
         <div className='productsPage'>
 
@@ -138,54 +158,56 @@ const Products = () => {
                     <div className='itemsImageProductPage'>
 
 
-                    {/* ---------- Take Product Deta Dynamicly ----------*/}
+                        {/* ---------- Take Product Deta Dynamicly ----------*/}
                         {
                             productDetails.product.map((item, index) => {
-                            return(
-                                
-                        <div className="itemsImageProductPageone" key={item.id}>
-                            <div className='imgBlockitemsImageProductPageOne'>
-                                {/* ---------------- img --------------*/}
-                                <img src={item.imageUrl} className="productImageProduct" />
-                            </div>
-                            <div className='productNameProduc'>
-                                {/* -------------- Name -------------- */}
-                                <div>
-                                    {item.name}
-                                </div>
-                                {/* -------------- Price ------------- */}
-                                <div className='priceProductDetailPage'>
-                                    <div className='currencyText'>
-                                        $
-                                    </div>
-                                    <div className='rateHomeDetails'>
-                                        <div className='rateHomeDetailsPrice'>
-                                            {item.price}
+                                return (
+
+                                    <div className="itemsImageProductPageone" key={item.id}>
+                                        <div className='imgBlockitemsImageProductPageOne'>
+                                            {/* ---------------- img --------------*/}
+                                            <img src={item.imageUrl} className="productImageProduct" />
                                         </div>
-                                        <div className='addtobashetbtn'>
-                                            Add to Cart 
+                                        <div className='productNameProduc'>
+                                            {/* -------------- Name -------------- */}
+                                            <div>
+                                                {item.name}
+                                            </div>
+                                            {/* -------------- Price ------------- */}
+                                            <div className='priceProductDetailPage'>
+                                                <div className='currencyText'>
+                                                    $
+                                                </div>
+                                                <div className='rateHomeDetails'>
+                                                    <div className='rateHomeDetailsPrice'>
+                                                        {item.price}
+                                                    </div>
+                                                    <div className='addtobashetbtn'
+                                                        onClick={() => handleAddToCart(item)}>
+                                                        Add to Cart
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div className="ratingLeftBox">
+                                                <StarRateIcon sx={{ fontSize: "20px", color: "#febd69" }} />
+                                                <StarRateIcon sx={{ fontSize: "20px", color: "#febd69" }} />
+                                                <StarRateIcon sx={{ fontSize: "20px", color: "#febd69" }} />
+                                                <StarOutlineIcon sx={{ fontSize: "20px", color: "#febd69" }} />
+                                                <div className="andUp"></div>
+                                            </div>
+
                                         </div>
-                                        
                                     </div>
-                                </div>
-                                <div className="ratingLeftBox">
-                            <StarRateIcon sx={{ fontSize: "20px", color: "#febd69" }} />
-                            <StarRateIcon sx={{ fontSize: "20px", color: "#febd69" }} />
-                            <StarRateIcon sx={{ fontSize: "20px", color: "#febd69" }} />
-                            <StarOutlineIcon sx={{ fontSize: "20px", color: "#febd69" }} />
-                            <div className="andUp"></div>
-                        </div>
-                        
-                        </div>
-                        </div>
-                            )
-                            
+                                )
+
                             })
                         }
 
                     </div>
                 </div>
             </div>
+            <ToastContainer/>
         </div>
 
     )
