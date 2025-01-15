@@ -1,56 +1,54 @@
 import React from 'react'
 import './NavbarBanner.css'
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
+import { Link } from 'react-router-dom'
 
 function NavbarBanner() {
 
   const option = [
-      {name: "Fresh"},
-      {name: "Amazon miniT"},
-      {name: "Sell"},
-      {name: "Best Sellers"},
-      {name: "Today's Deals"},
-      {name: "Mobiles"},
-      {name: "Electronics"},
-      {name: "Prime"},
-      {name: "Customer Service"},
-      {name: "Fashion"},
-      {name: "Home & Kitchen"}
-      
-    ]
+    { name: "Fresh" },
+    { name: "Amazon miniT" },
+    { name: "Sell" },
+    { name: "Best Sellers" },
+    { name: "Today's Deals" },
+    { name: "Mobiles" },
+    { name: "Electronics" },
+    { name: "Prime" },
+    { name: "Customer Service" },
+    { name: "Fashion" },
+    { name: "Home & Kitchen" }
+
+  ]
 
   return (
-  <div className="NavbarBanner">
+    <div className="NavbarBanner">
 
-    {/*--------------- Left Side Navbar ---------------*/}
-    <div className="navbarBannerOptionsLeft">
+      {/*--------------- Left Side Navbar ---------------*/}
+      <div className="navbarBannerOptionsLeft">
 
         <div className="optionNavbarBanner">
-          <MenuOutlinedIcon sx = {{fontSize : "24px"}}/>
+          <MenuOutlinedIcon sx={{ fontSize: "24px" }} />
           <div className='allOptionNavbarBanner'> All </div>
         </div>
-      {
-        option.map((item, ind)=>{
-          return(
-           <div className="optionNavbarBanner" key={ind}>
-             <div className='allOptionNavbarBanner'>
-                {item.name}
-             </div>
-           </div>
-         )
-        })
-      }
-        
-      
-        
-      
-    </div>
+        {
+          option.map((item, ind) => {
+            return (
+              <Link to={'/Products'} className="optionNavbarBanner" key={ind}>
+                <div className='allOptionNavbarBanner'>
+                  {item.name}
+                </div>
+              </Link>
+            )
+          })
+        }
 
-    <div className="navbarBannerRightside">
-      {/* <img src="" alt="" /> */}
-      <h2>AmazonPrime-Section</h2>
+      </div>
+
+      <div className="navbarBannerRightside">
+        {/* <img src="" alt="" /> */}
+        <h2>AmazonPrime-Section</h2>
+      </div>
     </div>
-  </div>
 
   )
 }

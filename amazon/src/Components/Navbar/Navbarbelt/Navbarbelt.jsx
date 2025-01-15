@@ -6,6 +6,7 @@ import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import india from "../../../assets/indiaflag.jpg"
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { Link } from "react-router-dom";
 
 function Navbarbelt() {
   return (
@@ -15,7 +16,7 @@ function Navbarbelt() {
     {/*------------ left side nav ------------*/}
       <div className="leftNavBelt">
         
-        <div className="leftNavBeltLogo">
+        <Link to={'/'} className="leftNavBeltLogo">
 
             <img  className="amazonLogoNavbar"
                   src={amazonLogo}
@@ -23,7 +24,7 @@ function Navbarbelt() {
 
             <span className="Navbar_inLogo">.in</span>
 
-        </div>
+        </Link>
 
         {/*------------ left side nav LOCATION ------------*/}
           <div className="navbarBeltLocation">
