@@ -106,7 +106,7 @@ function Navbarbelt() {
 
          {/*------------ Right side Cart ------------*/}
 
-        <div className="helloSignInNavbarBelt">
+        <Link to={'/Cart'} className="helloSignInNavbarBelt">
               <div className="cartItemNumberNavbarBelt">2</div>
               <div className="helloCodeNavbarBelt">
                 <ShoppingCartOutlinedIcon/>
@@ -114,7 +114,7 @@ function Navbarbelt() {
                 Cart
                 </span>
                 </div>
-        </div>
+        </Link>
 
       </div>
 
