@@ -2,6 +2,7 @@ import React from 'react'
 import './Products.css'
 import StarRateIcon from '@mui/icons-material/StarRate';
 import StarOutlineIcon from '@mui/icons-material/StarOutline';
+import productDetails from './Products.json'
 
 const Products = () => {
     return (
@@ -135,15 +136,22 @@ const Products = () => {
 
                     {/* ---------- Right Page Product Card ----------*/}
                     <div className='itemsImageProductPage'>
-                        <div className="itemsImageProductPageone">
+
+
+                    {/* ---------- Take Product Deta Dynamicly ----------*/}
+                        {
+                            productDetails.product.map((item, index) => {
+                            return(
+                                
+                        <div className="itemsImageProductPageone" key={item.id}>
                             <div className='imgBlockitemsImageProductPageOne'>
                                 {/* ---------------- img --------------*/}
-                                <img src={"https://m.media-amazon.com/images/I/6190zcm9RVL._AC_SX679_.jpg"} className="productImageProduct" />
+                                <img src={item.imageUrl} className="productImageProduct" />
                             </div>
                             <div className='productNameProduc'>
                                 {/* -------------- Name -------------- */}
                                 <div>
-                                    {"CASABREWS Espresso Machine 20 Bar, Professional Espresso Maker with Milk Frother Steam Wand, Compact Espresso Coffee Machine with 34oz Removable Water Tank for Cappuccino, Latte, Silver"}
+                                    {item.name}
                                 </div>
                                 {/* -------------- Price ------------- */}
                                 <div className='priceProductDetailPage'>
@@ -152,15 +160,29 @@ const Products = () => {
                                     </div>
                                     <div className='rateHomeDetails'>
                                         <div className='rateHomeDetailsPrice'>
-                                            {32500}
+                                            {item.price}
                                         </div>
                                         <div className='addtobashetbtn'>
                                             Add to Cart 
                                         </div>
+                                        
                                     </div>
                                 </div>
-                            </div>
+                                <div className="ratingLeftBox">
+                            <StarRateIcon sx={{ fontSize: "20px", color: "#febd69" }} />
+                            <StarRateIcon sx={{ fontSize: "20px", color: "#febd69" }} />
+                            <StarRateIcon sx={{ fontSize: "20px", color: "#febd69" }} />
+                            <StarOutlineIcon sx={{ fontSize: "20px", color: "#febd69" }} />
+                            <div className="andUp"></div>
                         </div>
+                        
+                        </div>
+                        </div>
+                            )
+                            
+                            })
+                        }
+
                     </div>
                 </div>
             </div>
