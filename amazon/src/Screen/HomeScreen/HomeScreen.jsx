@@ -6,6 +6,7 @@ import HomeDetails from './HomeDetails/HomeDetails'
 function HomeScreen() {
   return (
     <div className='homeScreen'>
+      <h2>Main Branch</h2>
         <HomeBanner/>
         <HomeDetails/>
       

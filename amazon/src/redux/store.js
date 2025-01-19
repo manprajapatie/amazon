@@ -1,3 +1,4 @@
+// import {configureStore} from '@reduxjs/toolkit'
 import { createStore, combineReducers } from "redux";
 import cartReducer from "./reducer/reducer";
 
